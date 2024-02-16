@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bingo Generator</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="icon" href="https://fav.farm/🎲" />
+</head>
+<body>
+    <section id="settings">
+        <label for="values">Enter Cell Values <small>Each cell on it's own line</small></label>
+        <textarea name="values" id="values" cols="30" rows="10" placeholder="Paste/type your 25 values with each value on it's own line."> 
+            Imagine - John Lennon
+            Bohemian Rhapsody - Queen
+            Hey Jude - The Beatles
+            Like a Rolling Stone - Bob Dylan
+            (I Can't Get No) Satisfaction - The Rolling Stones
+            Respect - Aretha Franklin
+            What a Wonderful World - Louis Armstrong
+            A Change is Gonna Come - Sam Cooke
+            Johnny B. Goode - Chuck Berry
+            Over the Rainbow - Judy Garland
+            Billie Jean - Michael Jackson
+            Sweet Child o' Mine - Guns N' Roses
+            Hotel California - Eagles
+            Stairway to Heaven - Led Zeppelin
+            I Will Always Love You - Whitney Houston
+            Bohemian Like You - The Dandy Warhols
+            Hallelujah - Leonard Cohen
+            Smells Like Teen Spirit - Nirvana
+            Don't Stop Believin' - Journey
+            Mr. Brightside - The Killers
+            Dancing Queen - ABBA
+            Can't Stop the Feeling! - Justin Timberlake
+            Uptown Funk - Mark Ronson ft. Bruno Mars
+            Thinking Out Loud - Ed Sheeran
+            Perfect - Ed Sheeran
+            A Sky Full of Stars - Coldplay
+            Roar - Katy Perry
+            Somebody That I Used to Know - Gotye ft. Kimbra
+            Rolling in the Deep - Adele
+            Someone You Loved - Lewis Capaldi
+            Bad Guy - Billie Eilish
+            Old Town Road (Remix) - Lil Nas X ft. Billy Ray Cyrus
+            Bohemian Rhapsody (2018 Version) - Queen
+            Shallow - Lady Gaga & Bradley Cooper
+            Lose Yourself - Eminem
+            Uptown Funk (Live) - Mark Ronson ft. Bruno Mars & Mark Morrison
+            I Wanna Dance With Somebody (Who Loves Me) - Whitney Houston
+            I Kissed a Girl - Katy Perry
+            Happy - Pharrell Williams
+            Thrift Shop - Macklemore & Ryan Lewis
+            Uptown Funk (Live) - Mark Ronson ft. Bruno Mars & Mark Morrison
+            Can't Stop the Feeling! (Live) - Justin Timberlake
+            Thinking Out Loud (Live) - Ed Sheeran
+            Perfect (Live) - Ed Sheeran
+            A Sky Full of Stars (Live) - Coldplay
+            Roar (Live) - Katy Perry
+            Somebody That I Used to Know (Live) - Gotye ft. Kimbra
+            Rolling in the Deep (Live) - Adele
+            Someone You Loved (Live) - Lewis Capaldi
+            Bad Guy (Live) - Billie Eilish
+        </textarea>
+        <label for="numCards">Number of Cards</label>
+        <input type="number" min="1" name="numCards" id="numCards" value="1" required>
+        <label for="cardNumbers">Start numbering</label>
+        <input type="number" min="1" name="cardNumbers" id="CardNumbers" value="1" required>
+        <button id="generate">Generate</button>
+        <button id="print" disabled>Print Cards</button>
+        <ul class="validation" id="validation"></ul>
+      </section>
+      <section id="cards"></section>
+      <script src="app.js"></script>
+</body>
+</html>

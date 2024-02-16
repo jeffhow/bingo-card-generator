@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+* {
+    box-sizing: border-box;
+}
+.card {
+    -webkit-print-color-adjust:exact !important;
+    print-color-adjust:exact !important;
+    max-width: 800px;
+    border-right: 2px solid black;  
+    border-bottom: 2px solid black; 
+    margin: 50px auto; 
+}
+.card header {
+    background-color: #ddd;
+    border-top: 2px solid black;  
+    border-left: 2px solid black; 
+    text-align: center;
+    padding: 25px;
+    position: relative;
+}
+.card h1 {
+    font-family: "Luckiest Guy", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 42px;
+    margin: 0;
+}
+.card .no {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    border: solid 1px black;
+    background-color: #fff;
+    padding: 10px;
+}
+
+.card main {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    min-height: 800px;
+}
+
+.cell {
+    border: 2px solid black;
+    border-right: none;  
+    border-bottom: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    font-family: sans-serif;
+}
+.cell:nth-child(odd) {
+    background-color: #ddd;
+}
+
+@media print {
+    #settings {
+        display: none;
+    }
+    .cell:nth-child(odd) {
+        background-color: #ddd;
+    }
+    .card header {
+        background-color: #ddd;
+    }
+    .card {
+        break-inside: avoid;  
+    }
+}
