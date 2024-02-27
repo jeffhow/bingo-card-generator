@@ -27,7 +27,7 @@ function generateCards(evt) {
 function renderCards(data) {
     let template = ``;
     for (let i=0;i<data.length;i++) {
-        template += `<section class="card">
+        template += `<div class="page"><section class="card">
                 <header>
                     <h1>BINGO</h1> 
                     <span class="no">Card No: ${i+1}</span>
@@ -39,7 +39,7 @@ function renderCards(data) {
             }
             template += `<div class="cell">${ data[i][j] }</div>`
         }
-        template += `</main></section>`;
+        template += `</main></section></div>`;
     }
     document.querySelector('#print').disabled = false;
     document.querySelector('#cards').innerHTML = template;
