@@ -111,14 +111,35 @@ button[disabled="true"] {
   background-color: #ddd;
 }
 
+.validation:has(li) {
+    background-color: red;
+    border-radius: 10px;
+    padding: 10px 10px 10px 30px;
+    text-shadow: 1px 1px 6px black;
+    border: white 2px solid;
+}
+.site-header {
+    max-width: 800px;
+    margin: auto;
+    color: white;
+    font-family: "Luckiest Guy", cursive;
+    font-weight: normal;
+    font-size: 40px;
+    text-align: center;
+    padding-top: 20px;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 10px black;
+    color: #d7dedd;
+}
+
 @media print {
   html,
   body {
     margin: 0;
     padding: 0;
   }
-
-  #settings {
+  
+  #settings, .site-header, .site-footer {
     display: none;
   }
   section {

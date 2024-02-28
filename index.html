@@ -8,9 +8,12 @@
     <link rel="icon" href="https://fav.farm/🎲" />
   </head>
   <body>
+    <header class="site-header">
+        Bingo Card Generator
+    </header>
     <section id="settings">
       <label for="values"
-        >Enter Cell Values <small>(Each cell on it's own line)</small></label
+        >Enter Cell Values* <small>(Each cell on it's own line)</small></label
       >
       <textarea
         name="values"
@@ -68,7 +71,7 @@ Somebody That I Used to Know (Live) - Gotye ft. Kimbra
 Rolling in the Deep (Live) - Adele
 Someone You Loved (Live) - Lewis Capaldi
 Bad Guy (Live) - Billie Eilish</textarea>
-      <label for="numCards">Number of Cards</label>
+      <label for="numCards">Number of Cards*</label>
       <input
         type="number"
         min="1"
@@ -77,14 +80,22 @@ Bad Guy (Live) - Billie Eilish</textarea>
         value="1"
         required
       />
-      <label for="cardNumbers">Start numbering</label>
+      <label for="startNum">Start numbering*</label>
       <input
         type="number"
         min="1"
-        name="cardNumbers"
-        id="CardNumbers"
+        name="startNum"
+        id="startNum"
         value="1"
         required
+      />
+      <label for="cardTitle">Card Title</label>
+      <input
+        type="text"
+        min="1"
+        name="cardTitle"
+        id="cardTitle"
+        placeholder="Leave blank for Bingo"
       />
       <div class="buttons">
         <button id="generate">Generate</button>

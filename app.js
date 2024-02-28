@@ -4,8 +4,20 @@ const printBtn = document.querySelector('#print');
 printBtn.addEventListener('click', e => window.print());
 
 function generateCards(evt) {
+    errors=[];
+
     const allSongs = document.querySelector('textarea').value.trim().split('\n').map(s=>s.trim());
-    const numCards = parseInt(document.querySelector('input').value);
+    const numCards = parseInt(document.querySelector('#numCards').value);
+    const startNum = parseInt(document.querySelector('#startNum').value);
+    const cardTitleField = document.querySelector('#cardTitle');
+    const cardTitle = cardTitleField.value.length > 0 ? cardTitleField.value : 'Bingo';
+
+    if (isNaN(startNum)) {
+        errors.push('"Start numbering" must contain a number');
+    }
+    if (isNaN(numCards)) {
+        errors.push('"Number of Cards" must contain a number');
+    }
     if (allSongs.length<24) {
         errors.push("Please add at least 24 items");
     }
@@ -14,23 +26,23 @@ function generateCards(evt) {
     }
 
     if(errors.length>0) {
-        document.querySelector('validation').innerHTML = errors.map(e=> `<li>${e}</li>`);
+        document.querySelector('#validation').innerHTML = errors.map(e=> `<li>${e}</li>`).join('');
         return;
     }
 
     let data = Array.from({length:numCards}, _ => getCardData(allSongs));
     
-    renderCards(data)
-    // console.log(allSongs);
+    renderCards(data, cardTitle, startNum)
+    // console.log(cardTitle);
 }
 
-function renderCards(data) {
+function renderCards(data, title, n) {
     let template = ``;
     for (let i=0;i<data.length;i++) {
         template += `<div class="page"><section class="card">
                 <header>
-                    <h1>BINGO</h1> 
-                    <span class="no">Card No: ${i+1}</span>
+                    <h1>${ title }</h1> 
+                    <span class="no">Card No: ${n+i}</span>
                 </header>
             <main>`
         for (let j=0; j<data[i].length; j++) {
@@ -43,7 +55,7 @@ function renderCards(data) {
     }
     document.querySelector('#print').disabled = false;
     document.querySelector('#cards').innerHTML = template;
-    console.log(data)
+    // console.log(data)
 }
 
 function getCardData(songs) {
